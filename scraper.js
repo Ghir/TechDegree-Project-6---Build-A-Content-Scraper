@@ -16,7 +16,6 @@ function checkFolder () {
 // go to website, scrape content and save it
 function scrape () {
   checkFolder();
-
   // generate new date in format year-month-day
   const dt = new Date();
   const date = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
@@ -30,7 +29,7 @@ function scrape () {
     ImgURL: x("a@href", "img@src"),
     URL: "a@href",
   }])
-  // callback function
+  // callback
   ((err, obj) => {
     // if error occurs create error message
     if (err) {
