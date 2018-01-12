@@ -19,7 +19,7 @@ function scrape () {
   // generate new date in format year-month-day
   const dt = new Date();
   const date = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
-  // send a write stream to the new csv files named after current date
+  // send a write stream to the new csv file named after current date
   const ws = fs.createWriteStream(`./data/${date}.csv`);
 
   // scrape and crawl function that uses 'x-ray' module
