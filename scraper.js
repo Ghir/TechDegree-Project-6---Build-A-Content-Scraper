@@ -17,10 +17,10 @@ function checkFolder () {
 function scrape () {
   checkFolder();
   // generate new date in format year-month-day
-  const dt = new Date();
-  const date = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
+  const dateTime = new Date();
+  const date = dateTime.getFullYear() + "-" + (dateTime.getMonth() + 1) + "-" + dateTime.getDate();
   // send a write stream to the new csv file named after current date
-  const ws = fs.createWriteStream(`./data/${date}.csv`);
+  const writeStream = fs.createWriteStream(`./data/${date}.csv`);
 
   // scrape and crawl function that uses 'x-ray' module
   x('http://www.shirts4mike.com/shirt.php', '.products li', [{
@@ -37,7 +37,7 @@ function scrape () {
       // show message
       console.error(errorMessage);
       // save error in a new line of 'scraper-error.log'
-      fs.appendFileSync('./data/scraper-error.log', `[${dt}] ${errorMessage} \r\n`, encoding='utf8');
+      fs.appendFileSync('./data/scraper-error.log', `[${dateTime}] ${errorMessage} \r\n`, encoding='utf8');
       return
     }
     // assign 'Time' value and adjust 'Title' value
@@ -52,7 +52,7 @@ function scrape () {
         headers: fields
       })
       // send stream to csv file
-      .pipe(ws);
+      .pipe(writeStream);
       // show success message
     console.log('Content saved.')
   })
