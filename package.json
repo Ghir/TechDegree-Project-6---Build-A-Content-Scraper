@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Ghir/JS-Project-6---Build-A-Content-Scraper#readme",
   "dependencies": {
-    "fast-csv": "^2.4.1",
-    "x-ray": "^2.3.2"
+    "fast-csv": "^3.4.0",
+    "x-ray": "^2.3.4"
   }
 }
