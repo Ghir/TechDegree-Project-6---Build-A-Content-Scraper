@@ -1,22 +1,14 @@
 {
-  "name": "content_scraper",
-  "version": "0.0.1",
+  "name": "web-scraper",
+  "version": "1.0.0",
   "description": "Build a content scraper",
   "main": "scraper.js",
   "scripts": {
     "start": "node scraper.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ghir/JS-Project-6---Build-A-Content-Scraper.git"
-  },
   "author": "Dario Ghirardo",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Ghir/JS-Project-6---Build-A-Content-Scraper/issues"
-  },
-  "homepage": "https://github.com/Ghir/JS-Project-6---Build-A-Content-Scraper#readme",
   "dependencies": {
     "fast-csv": "^3.4.0",
     "x-ray": "^2.3.4"
