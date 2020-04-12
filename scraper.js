@@ -5,15 +5,15 @@ const csv = require('fast-csv');
 const fields = ['Title', 'Price', 'ImgURL', 'URL', 'Time'];
 
 // search or create data folder
-function checkFolder () {
+function checkFolder() {
   try {
     fs.statSync('./data');
-  } catch(e) {
+  } catch (e) {
     fs.mkdirSync('./data');
   }
 }
 
-function scrape () {
+function scrape() {
   checkFolder();
   const dateTime = new Date();
   const date = dateTime.getFullYear() + "-" + (dateTime.getMonth() + 1) + "-" + dateTime.getDate();
@@ -27,25 +27,25 @@ function scrape () {
     ImgURL: x("a@href", "img@src"),
     URL: "a@href",
   }])
-  ((err, obj) => {
-    if (err) {
-      const errorMessage = `There’s been an error. Cannot connect to ${err.hostname}. (errorCode: ${err.code})`
-      console.error(errorMessage);
-      fs.appendFileSync('./data/scraper-error.log', `[${dateTime}] ${errorMessage} \r\n`, encoding='utf8');
-      return
-    }
-    for (let i = 0; i < 8; i++) {
-      obj[i].Time = new Date();
-      obj[i].Title = obj[i].Title.slice(4);
-    }
-    // 'fast-csv' module to convert scraped content to csv
-    csv
-      .write(obj,{
-        headers: fields
-      })
-      .pipe(writeStream);
-    console.log('Content saved.')
-  })
+    ((err, obj) => {
+      if (err) {
+        const errorMessage = `There’s been an error. Cannot connect to ${err.hostname}. (errorCode: ${err.code})`
+        console.error(errorMessage);
+        fs.appendFileSync('./data/scraper-error.log', `[${dateTime}] ${errorMessage} \r\n`, encoding = 'utf8');
+        return
+      }
+      for (let i = 0; i < 8; i++) {
+        obj[i].Time = new Date();
+        obj[i].Title = obj[i].Title.slice(4);
+      }
+      // 'fast-csv' module to convert scraped content to csv
+      csv
+        .write(obj, {
+          headers: fields
+        })
+        .pipe(writeStream);
+      console.log('Content saved.')
+    })
 }
 
 scrape();
