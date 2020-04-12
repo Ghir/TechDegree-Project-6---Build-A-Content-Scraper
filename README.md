@@ -1,7 +1,14 @@
-# Content Scraper
+# Web Scraper
 
-A Node.js command line application that gets the latest prices from an ecommerce site and saves them to a spreadsheet in CSV format.
+A Node.js command line application scrapes an e-commerce site and saves data to a spreadsheet in CSV format.
 
 ### Running
-* `npm install`
-* `npm start`
+
+- `npm install`
+- `npm start`
+
+### Technologies
+
+- Node
+- X-ray
+- Fast-csv
