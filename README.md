@@ -1,6 +1,6 @@
 # Web Scraper
 
-A Node.js command line application scrapes an e-commerce site and saves data to a spreadsheet in CSV format.
+Node.js command line application that scrapes an e-commerce site and saves data to a spreadsheet in CSV format.
 
 ### Running
 
@@ -9,6 +9,6 @@ A Node.js command line application scrapes an e-commerce site and saves data to 
 
 ### Technologies
 
-- Node
+- Node.js
 - X-ray
 - Fast-csv
