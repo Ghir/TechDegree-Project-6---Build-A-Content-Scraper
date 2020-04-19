@@ -1,4 +1,4 @@
-# Web Scraper
+## Web Scraper
 
 Node.js command line application that scrapes an e-commerce site and saves data to a spreadsheet in CSV format.
 
